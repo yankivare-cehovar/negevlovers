@@ -147,6 +147,5 @@ function closeLightbox(event) {
 // --- GLOBAL INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Set language for all pages
-    const initialLang = document.getElementById('lang-select').value;
-    setLanguage(initialLang);
+    setLanguage('en');
 });

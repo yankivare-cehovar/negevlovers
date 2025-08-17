@@ -65,8 +65,8 @@ function initializeGame() {
 
     // --- Maps Configuration ---
     const maps = [
-        { name: 'Dust II', image: 'game1bg1dust.jpeg' },
-        { name: 'Inferno', image: 'game1bg2inferno.jpeg' }
+        { name: 'Dust II', image: 'assets/images/game1bg1dust.jpeg' },
+        { name: 'Inferno', image: 'assets/images/game1bg2inferno.jpeg' }
     ];
 
     // --- Core Functions ---
@@ -265,11 +265,11 @@ function initializeGame() {
         if (Math.random() < 0.15) {
             target.classList.add('ally');
             target.dataset.type = 'ally';
-            target.style.backgroundImage = "url('ally.png')"; // Placeholder image
+            target.style.backgroundImage = "url('assets/images/ally.png')"; // Placeholder image
             target.dataset.health = 100;
         } else {
             target.dataset.type = 'terrorist';
-            target.style.backgroundImage = "url('assets/images/terorist.png')";
+                        target.style.backgroundImage = "url('assets/images/terorist.png')";
             target.dataset.health = 100;
         }
 
@@ -388,7 +388,11 @@ function initializeGame() {
                 mapButton.style.backgroundImage = `url('${map.image}')`;
                 mapButton.addEventListener('click', () => {
                     if(isReloading) return;
-                    if (gameScreen) gameScreen.style.backgroundImage = `url('${map.image}')`;
+                    if (gameScreen) {
+                        gameScreen.style.backgroundImage = `url('${map.image}')`;
+                        gameScreen.style.backgroundSize = '100% 100%';
+                        gameScreen.style.backgroundPosition = 'center';
+                    }
                     document.querySelectorAll('.map-button').forEach(btn => btn.classList.remove('active'));
                     mapButton.classList.add('active');
                 });
