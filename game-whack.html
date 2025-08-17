@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negev Lovers - Whack-a-Negev</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo" data-i18n-key="nav_logo"></a>
+        <div class="nav-links">
+            <a href="index.html" data-i18n-key="nav_home"></a>
+            <a href="gallery.html" data-i18n-key="nav_gallery"></a>
+            <div class="dropdown">
+                <button class="dropbtn" data-i18n-key="nav_games"></button>
+                <div class="dropdown-content">
+                    <a href="game-whack.html" data-i18n-key="nav_game_whack"></a>
+                </div>
+            </div>
+        </div>
+        <div class="lang-switcher">
+            <select id="lang-select" onchange="setLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+        </div>
+    </nav>
+
+    <header>
+        <h1 data-i18n-key="whack_game_title"></h1>
+    </header>
+
+    <main class="game-container">
+        <div id="game-screen">
+            <div id="crosshair"></div>
+            <!-- Hedefler ve mermi izleri buraya gelecek -->
+            <div id="game-ui">
+                <div class="ui-box">
+                    <span data-i18n-key="ui_score"></span>: <span id="score">0</span>
+                </div>
+                <div class="ui-box">
+                    <span data-i18n-key="ui_ammo"></span>: <span id="ammo">150 / 300</span>
+                </div>
+            </div>
+            <img src="negev.png" alt="Negev Viewmodel" id="weapon-viewmodel">
+        </div>
+        <div id="start-game-overlay">
+            <div id="high-score-display-start">En Yüksek Skor: 0</div>
+            <button id="start-game-button" data-i18n-key="ui_start_button"></button>
+        </div>
+
+        <div id="game-over-screen" style="display: none;">
+            <h2>Game Over</h2>
+            <div id="final-stats">
+                <p>Score: <span id="final-score">0</span></p>
+                <p>Accuracy: <span id="final-accuracy">0</span>%</p>
+                <p>High Score: <span id="final-high-score">0</span></p>
+            </div>
+            <button id="play-again-button">Play Again</button>
+        </div>
+    </main>
+
+    <div class="game-controls">
+        <div class="control-group">
+            <label for="speed-slider" data-i18n-key="ui_speed"></label>
+            <input type="range" id="speed-slider" min="3" max="8" value="5" step="1">
+            <span id="speed-value">5s</span>
+        </div>
+        <div class="control-group">
+            <label for="frequency-slider" data-i18n-key="ui_frequency"></label>
+            <input type="range" id="frequency-slider" min="300" max="1500" value="800" step="100">
+            <span id="frequency-value">800ms</span>
+        </div>
+
+        <div class="control-group">
+            <label for="negev-size-slider">Negev Boyutu</label>
+            <input type="range" id="negev-size-slider" min="50" max="100" value="80" step="1">
+            <span id="negev-size-value">80%</span>
+        </div>
+
+        <div class="control-group">
+            <label>Hedef Yönü</label>
+            <div id="direction-controls">
+                <input type="radio" id="dir-ltr" name="direction" value="ltr" checked>
+                <label for="dir-ltr">Soldan</label>
+                <input type="radio" id="dir-rtl" name="direction" value="rtl">
+                <label for="dir-rtl">Sağdan</label>
+                <input type="radio" id="dir-both" name="direction" value="both">
+                <label for="dir-both">Karışık</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-selection">
+        <!-- Map buttons will be dynamically inserted here -->
+    </div>
+
+    <audio id="negev-sound" src="negev_fire.mp3" preload="auto"></audio>
+    <audio id="hit-sound" src="hit.mp3" preload="auto"></audio>
+    <audio id="kill-sound" src="kill.mp3" preload="auto"></audio>
+    <audio id="reload-sound" src="reload.mp3" preload="auto"></audio>
+    <audio id="hostage-hit-sound" src="hostage_hit.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    <script src="js/whack-a-negev.js"></script>

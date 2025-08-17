@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negev Lovers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo" data-i18n-key="nav_logo"></div>
+        <div class="nav-links">
+            <a href="index.html" data-i18n-key="nav_home"></a>
+            <a href="gallery.html" data-i18n-key="nav_gallery"></a>
+            <div class="dropdown">
+                <button class="dropbtn" data-i18n-key="nav_games"></button>
+                <div class="dropdown-content">
+                    <a href="game-whack.html" data-i18n-key="nav_game_whack"></a>
+                </div>
+            </div>
+        </div>
+        <div class="lang-switcher">
+            <select id="lang-select" onchange="setLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+        </div>
+    </nav>
+
+    <header>
+        <h1 data-i18n-key="main_title"></h1>
+        <p data-i18n-key="subtitle"></p>
+    </header>
+
+    <div class="manifesto">
+        <h2 data-i18n-key="manifesto_title"></h2>
+        <ul id="manifesto-list">
+            <!-- Manifesto items will be populated by JS -->
+        </ul>
+    </div>
+
+    <div class="interactive-section">
+        <h2 data-i18n-key="interactive_title"></h2>
+        <button onclick="shouldIBuyNegev()" data-i18n-key="interactive_button"></button>
+        <p id="decision-result"></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

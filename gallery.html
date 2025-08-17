@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negev Lovers - Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo" data-i18n-key="nav_logo"></a>
+        <div class="nav-links">
+            <a href="index.html" data-i18n-key="nav_home"></a>
+            <a href="gallery.html" data-i18n-key="nav_gallery"></a>
+            <div class="dropdown">
+                <button class="dropbtn" data-i18n-key="nav_games"></button>
+                <div class="dropdown-content">
+                    <a href="game-whack.html" data-i18n-key="nav_game_whack"></a>
+                </div>
+            </div>
+        </div>
+        <div class="lang-switcher">
+            <select id="lang-select" onchange="setLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+        </div>
+    </nav>
+
+    <header>
+        <h1 data-i18n-key="gallery_title"></h1>
+    </header>
+
+    <main class="gallery-container">
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/1200x800/1a2b41/f59e0b?text=Mjölnir', 'Mjölnir', 'skin_desc_mjolnir')">
+            <img src="https://placehold.co/600x400/1a2b41/f59e0b?text=Mjölnir" alt="Negev Mjölnir">
+            <h3>Mjölnir</h3>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/1200x800/1a2b41/f59e0b?text=Loudmouth', 'Loudmouth', 'skin_desc_loudmouth')">
+            <img src="https://placehold.co/600x400/1a2b41/f59e0b?text=Loudmouth" alt="Negev Loudmouth">
+            <h3>Loudmouth</h3>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/1200x800/1a2b41/f59e0b?text=Power+Loader', 'Power Loader', 'skin_desc_powerloader')">
+            <img src="https://placehold.co/600x400/1a2b41/f59e0b?text=Power+Loader" alt="Negev Power Loader">
+            <h3>Power Loader</h3>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/1200x800/1a2b41/f59e0b?text=Bratatat', 'Bratatat', 'skin_desc_bratatat')">
+            <img src="https://placehold.co/600x400/1a2b41/f59e0b?text=Bratatat" alt="Negev Bratatat">
+            <h3>Bratatat</h3>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/1200x800/1a2b41/f59e0b?text=Anodized+Navy', 'Anodized Navy', 'skin_desc_anodized')">
+            <img src="https://placehold.co/600x400/1a2b41/f59e0b?text=Anodized+Navy" alt="Negev Anodized Navy">
+            <h3>Anodized Navy</h3>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/1200x800/1a2b41/f59e0b?text=Desert-Strike', 'Desert-Strike', 'skin_desc_desertstrike')">
+            <img src="https://placehold.co/600x400/1a2b41/f59e0b?text=Desert-Strike" alt="Negev Desert-Strike">
+            <h3>Desert-Strike</h3>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-button" onclick="closeLightbox(event)">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Negev Skin">
+            <div id="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
